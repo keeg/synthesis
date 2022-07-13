@@ -1,20 +1,86 @@
 <html>
   <head>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #333333;
+        color: white;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/background.jpg');
+        background-size: cover;
+      }
+      #hud-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 24px;
+        margin: 0 auto;
+        backdrop-filter: blur(5px);
+      }
+      .hud {
+        position: relative;
+        display: inline-block;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color:rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 0 8px;
+        backdrop-filter: blur(32px);
+        -webkit-backdrop-filter: blur(32px);
+        -moz-backdrop-filter: blur(32px);
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+      }
+      .hud:hover {
+        transform: scale(1.02);
+        background-color:rgba(255, 255, 255, 0.5);
+      }
+      .hud li {
+        float: left;
+        padding: 4px;
+        transition: all .2s ease-in-out;
+        image-rendering: pixelated;
+      }
+      .hud li:hover {
+        transform: scale(1.15);
+      }
+      .hud li a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-size: 32px 32px;
+        background-repeat: none;
+        image-rendering: pixelated;
+      }
+      .hud .hud-user { background-image: url('images/icon-user.png'); }
+      .hud .hud-microphone { background-image: url('images/icon-microphone.png'); }
+      .hud .hud-screenshare { background-image: url('images/icon-screenshare.png'); }
+      .hud .hud-add { background-image: url('images/icon-add.png'); }
+      .hud .hud-settings { background-image: url('images/icon-settings.png'); }
+      .hud .hud-exit { background-image: url('images/icon-exit.png'); }
+      .hud .hud-divider {
+        width: 1px;
+        height: 18px;
+        background: #fff;
+        padding: 0;
+        margin: 10px 8px;
+        border-bottom: 1px solid #000;
+      }
+    </style>
   </head>
   <body>
-    hi
-    <div id="hud">
-      <ul>
-        <li class="hud-user"><a href="#"></a></li>
-        <li class="hud-microphone"><a href="#"></a></li>
-        <li class="hud-chat"><a href="#"></a></li>
-        <li class="hud-screenshare"><a href="#"></a></li>
+    <div id="hud-container">
+      <ul class="hud">
+        <li><a href="#" class="hud-user"></a></li>
+        <li><a href="#" class="hud-microphone"></a></li>
+        <li><a href="#" class="hud-screenshare"></a></li>
+        <li><a href="#" class="hud-add"></a></li>
+        <li><a href="#" class="hud-exit"></a></li>
         <li class="hud-divider"></li>
-        <li class="hud-settings"><a href="#"></a></li>
-        <li class="hud-teams">
-          <a href="#" class-="hud-team selected"></a>
-          <a href="#" class-="hud-team selected"></a>
-         </li>
+        <li><a href="#" class="hud-settings"></a></li>
       </ul>
     </div>
   </body>
