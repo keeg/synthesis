@@ -35,17 +35,16 @@
         cursor: pointer;
       }
       .hud:hover {
-        transform: scale(1.02);
+        transform: scale(1.02) translateZ(0);
         background-color:rgba(255, 255, 255, 0.5);
       }
       .hud li {
         float: left;
         padding: 4px;
         transition: all .2s ease-in-out;
-        image-rendering: pixelated;
       }
       .hud li:hover {
-        transform: scale(1.15);
+        transform: scale(1.15) translateZ(0);
       }
       .hud li a {
         display: block;
@@ -53,14 +52,26 @@
         height: 32px;
         background-size: 32px 32px;
         background-repeat: none;
-        image-rendering: pixelated;
+
+        -webkit-filter: drop-shadow(0px 1px 0px rgba(0,0,0,0.5));
+        -moz-filter: drop-shadow(0px 1px 0px rgba(0,0,0,0.5));
+        filter: drop-shadow(0px 1px 0px rgba(0,0,0,0.5));
       }
-      .hud .hud-user { background-image: url('images/icon-user.png'); }
-      .hud .hud-microphone { background-image: url('images/icon-microphone.png'); }
-      .hud .hud-screenshare { background-image: url('images/icon-screenshare.png'); }
-      .hud .hud-add { background-image: url('images/icon-add.png'); }
-      .hud .hud-settings { background-image: url('images/icon-settings.png'); }
-      .hud .hud-exit { background-image: url('images/icon-exit.png'); }
+      .hud .hud-user {
+        border-radius: 2px;
+      }
+      .hud .hud-user img {
+        margin-top: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+        border: 1px solid white;
+      }
+      .hud .hud-microphone { background-image: url('images/icon-microphone.svg'); }
+      .hud .hud-screenshare { background-image: url('images/icon-screenshare.svg'); }
+      .hud .hud-add { background-image: url('images/icon-add.svg'); }
+      .hud .hud-settings { background-image: url('images/icon-settings.svg'); }
+      .hud .hud-exit { background-image: url('images/icon-exit.svg'); }
       .hud .hud-divider {
         width: 1px;
         height: 18px;
@@ -74,7 +85,7 @@
   <body>
     <div id="hud-container">
       <ul class="hud">
-        <li><a href="#" class="hud-user"></a></li>
+        <li><a href="#" class="hud-user"><img src="images/icon-user.png" /></a></li>
         <li><a href="#" class="hud-microphone"></a></li>
         <li><a href="#" class="hud-screenshare"></a></li>
         <li><a href="#" class="hud-add"></a></li>
